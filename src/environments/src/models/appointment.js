@@ -1,15 +1,15 @@
 const mongoose = require("mongoose")
 
 const appointmentSchema = mongoose.Schema({
-    idDoctor: {
-        type: mongoose.Types.ObjectId,
+    userdoctor: {
+        type: String,
         required: true
     },
     namepet: {
         type: String,
         required: true
     },
-    nameowner: {
+    userowner: {
         type: String,
         required: true
     },
