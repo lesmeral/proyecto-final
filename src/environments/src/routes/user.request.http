@@ -1,0 +1,51 @@
+//CREATE USER
+###
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"JedyFS",
+    "email":"JedyFS@gmail.com",
+    "password":"admin123"
+}
+
+//GET USERS
+###
+GET http://localhost:3000/user/userall
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"FreddyGM",
+    "email":"fguete@gmail.com",
+    "password":"admin123"
+}
+
+//GET USERS
+###
+GET http://localhost:3000/user/FreddyGM
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"FreddyGM",
+    "email":"fguete@gmail.com",
+    "password":"admin123"
+}
+
+//UPDATE USERS
+###
+PATCH http://localhost:3000/user/FreddyGM
+Content-Type: application/json
+
+{
+    "name":"Freddy Maldonado",
+    "email":"fguete123@gmail.com",
+    "password":"admin1234"
+}
+
+//DELETE USERS
+###
+DELETE http://localhost:3000/user/DrGuetts
+Content-Type: application/json

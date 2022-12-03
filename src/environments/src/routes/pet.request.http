@@ -1,0 +1,46 @@
+//CREATE pet
+###
+POST http://localhost:3000/pet/create
+Content-Type: application/json
+
+{
+    "name":"Roberto",
+    "dateb":"2020/05/20",
+    "username":"FreddyGM"
+}
+
+//GET USERS pet
+###
+GET http://localhost:3000/pet/petall
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"FreddyGM",
+    "email":"fguete@gmail.com",
+    "password":"admin123"
+}
+
+//GET USERS
+###
+GET http://localhost:3000/pet/Hiro/FreddyGM
+Content-Type: application/json
+
+//GET perros por usuario
+###
+GET http://localhost:3000/pet/JedyFS
+Content-Type: application/json
+
+//UPDATE USERS
+###
+PATCH http://localhost:3000/pet/Clifford/FreddyGM
+Content-Type: application/json
+
+{
+    "userOwner":"JedyFS"
+}
+
+//DELETE USERS
+###
+DELETE http://localhost:3000/pet/Clifford/JedyFS
+Content-Type: application/json
