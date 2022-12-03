@@ -20,7 +20,8 @@ router.post('/create', async (req, res) => {
                         userdoctor: req.body.userdoctor,
                         namepet: req.body.namepet,
                         userowner: req.body.userowner,
-                        dateappointment: req.body.dateappointment
+                        dateapp: req.body.dateapp,
+                        hourapp: req.body.hourapp
                     })
                     const result = await appointment.save()
                     res.status(200).json({ result })
@@ -38,32 +39,55 @@ router.post('/create', async (req, res) => {
     }
 
 })
-// Obtener todos los usuarios
+// Obtener todos las citas
 router.get("/appointmentall", async (req, res) => {
     try {
-        const result = await Doctor.find()
+        const result = await Appointment.find()
         res.status(200).json({ result })
     } catch (error) {
         res.status(500).json({ message: "Error update Doctor" })
     }
 })
 
-// Obtener un usuario en especifico
-router.get("/:username", async (req, res) => {
+// Obtener fecha especifica en especifico
+router.get("/date/:date", async (req, res) => {
     try {
-        const { username } = req.params
-        const result = await Doctor.findOne({ username: username })
+        const { date } = req.params
+        const datec = new Date(date)
+        const datev = datec.toISOString().substring(0, 10)
+        console.log(datev)
+        const result = await Appointment.find({ dateappointment: datev })
         res.status(200).json({ result })
     } catch (error) {
-        res.status(500).json({ message: "Error update Doctor" })
+        res.status(500).json({ message: "Error get appointments" })
+    }
+})
+
+router.get("/doctor/:userdoctor", async (req, res) => {
+    try {
+        const { userdoctor } = req.params
+        const result = await Appointment.find({ userdoctor: userdoctor })
+        res.status(200).json({ result })
+    } catch (error) {
+        res.status(500).json({ message: "Error get appointments" })
+    }
+})
+
+router.get("/owner/:userowner", async (req, res) => {
+    try {
+        const { userowner } = req.params
+        const result = await Appointment.find({ userowner: userowner })
+        res.status(200).json({ result })
+    } catch (error) {
+        res.status(500).json({ message: "Error get appointments" })
     }
 })
 
 // Borrar un usuario en especifico
-router.delete("/:username", async (req, res) => {
-    const { username } = req.params
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params
     try {
-        const result = await Doctor.remove({ username: username })
+        const result = await Appointment.remove({ _id: id })
         res.status(200).json({ result })
     } catch (error) {
         res.status(500).json({ message: "Error update Doctor" })
@@ -71,23 +95,17 @@ router.delete("/:username", async (req, res) => {
 })
 
 // Actualizar información de un usuario
-router.patch("/:username", async (req, res) => {
-    const { username } = req.params
-    const { name, email, password } = req.body
+router.patch("/:id", async (req, res) => {
+    const { id } = req.params
+    const { userdoctor, dateapp, hourapp} = req.body
+    const datec = new Date(dateapp)
+    const datev = datec.toISOString()
     try {
-        if (password) {
-            const salt = await bcrypt.genSalt(10)
-            const hashPassword = await bcrypt.hash(password, salt)
-            const result = await Doctor
-                .updateOne({ username: username }, { $set: { name, email, password: hashPassword } })
-            res.status(200).json({ result })
-        } else {
-            const result = await Doctor
-                .updateOne({ username: username }, { $set: { name, email } })
-            res.status(200).json({ result })
-        }
+        const result = await Appointment
+            .updateOne({ _id: id }, { $set: { userdoctor, dateapp:datev, hourapp} })
+        res.status(200).json({ result })
     } catch (error) {
-        res.status(500).json({ message: "Error update Doctor" })
+        res.status(500).json({ message: "Error update Appointment" })
     }
 })
 

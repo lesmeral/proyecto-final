@@ -22,7 +22,7 @@ Content-Type: application/json
     "password":"admin123"
 }
 
-//GET USERS
+//GET Users
 ###
 GET http://localhost:3000/doctor/DrGuetts
 Content-Type: application/json

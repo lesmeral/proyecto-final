@@ -7,7 +7,8 @@ Content-Type: application/json
     "userdoctor": "DrGuetts",
     "namepet":"Matias",
     "userowner":"FreddyGM",
-    "dateappointment":"2022/05/13"
+    "dateapp":"2022/05/13",
+    "hourapp":"14:30"
 }
 
 //GET USERS appointment
@@ -15,30 +16,32 @@ Content-Type: application/json
 GET http://localhost:3000/appointment/appointmentall
 Content-Type: application/json
 
-{
-    "name":"Freddy Guete",
-    "username":"FreddyGM",
-    "email":"fguete@gmail.com",
-    "password":"admin123"
-}
 
-//GET USERS
+//GET appointment by date
 ###
-GET http://localhost:3000/appointment/DrGuetts
+GET http://localhost:3000/appointment/date/2022-05-13
+Content-Type: application/json
+
+//GET appointment by doctor
+###
+GET http://localhost:3000/appointment/doctor/DrGuetts
+Content-Type: application/json
+
+//GET  appointment by User
+###
+GET http://localhost:3000/appointment/owner/FreddyGM
 Content-Type: application/json
 
 //UPDATE USERS
 ###
-PATCH http://localhost:3000/appointment/DrGuetts
+PATCH http://localhost:3000/appointment/638bd514212e2028fc9c94b6
 Content-Type: application/json
 
 {
-    "name":"Freddy Purry",
-    "email":"Siuuuuu@gmail.com",
-    "password":"admin1234"
+    "dateapp":"2022-07-07"
 }
 
 //DELETE USERS
 ###
-DELETE http://localhost:3000/appointment/DrGuetts
+DELETE http://localhost:3000/appointment/638bd514212e2028fc9c94b6
 Content-Type: application/json
