@@ -1,0 +1,44 @@
+//CREATE DOCTOR
+###
+POST http://localhost:3000/doctor/create
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"DrGuetts",
+    "email":"drguetts6@gmail.com",
+    "password":"admin123"
+}
+
+//GET USERS DOCTOR
+###
+GET http://localhost:3000/doctor/doctorall
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"FreddyGM",
+    "email":"fguete@gmail.com",
+    "password":"admin123"
+}
+
+//GET USERS
+###
+GET http://localhost:3000/doctor/DrGuetts
+Content-Type: application/json
+
+//UPDATE USERS
+###
+PATCH http://localhost:3000/doctor/DrGuetts
+Content-Type: application/json
+
+{
+    "name":"Freddy Purry",
+    "email":"Siuuuuu@gmail.com",
+    "password":"admin1234"
+}
+
+//DELETE USERS
+###
+DELETE http://localhost:3000/doctor/DrGuetts
+Content-Type: application/json
