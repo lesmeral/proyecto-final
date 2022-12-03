@@ -1,0 +1,44 @@
+//CREATE appointment
+###
+POST http://localhost:3000/appointment/create
+Content-Type: application/json
+
+{
+    "userdoctor": "DrGuetts",
+    "namepet":"Matias",
+    "userowner":"FreddyGM",
+    "dateappointment":"2022/05/13"
+}
+
+//GET USERS appointment
+###
+GET http://localhost:3000/appointment/appointmentall
+Content-Type: application/json
+
+{
+    "name":"Freddy Guete",
+    "username":"FreddyGM",
+    "email":"fguete@gmail.com",
+    "password":"admin123"
+}
+
+//GET USERS
+###
+GET http://localhost:3000/appointment/DrGuetts
+Content-Type: application/json
+
+//UPDATE USERS
+###
+PATCH http://localhost:3000/appointment/DrGuetts
+Content-Type: application/json
+
+{
+    "name":"Freddy Purry",
+    "email":"Siuuuuu@gmail.com",
+    "password":"admin1234"
+}
+
+//DELETE USERS
+###
+DELETE http://localhost:3000/appointment/DrGuetts
+Content-Type: application/json
