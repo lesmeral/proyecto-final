@@ -9,7 +9,7 @@ const appointmentRoutes = require("./routes/appointment.js")
 
 
 const app = express()
-const port = process.env.PORT || 9000
+const port = 3000
 
 
 //middlewares
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect('mongodb+srv://root:admin123@veterinary.kjuixxb.mongodb.net/Veterinary?retryWrites=true&w=majority')
   .then(() => console.log("Conectado a MongoDB"))
   .catch((error) => console.error(error))
 
