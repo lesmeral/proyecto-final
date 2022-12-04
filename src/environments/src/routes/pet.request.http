@@ -14,12 +14,6 @@ Content-Type: application/json
 GET http://localhost:3000/pet/petall
 Content-Type: application/json
 
-{
-    "name":"Freddy Guete",
-    "username":"FreddyGM",
-    "email":"fguete@gmail.com",
-    "password":"admin123"
-}
 
 //GET PETS BY USER
 ###
