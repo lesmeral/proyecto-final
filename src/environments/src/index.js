@@ -5,9 +5,12 @@ const userRoutes = require("./routes/user.js")
 const doctorRoutes = require("./routes/doctor.js")
 const petRoutes = require("./routes/pet.js")
 const appointmentRoutes = require("./routes/appointment.js")
+const cors = require("cors")
 
 const app = express()
 const port = process.env.PORT || 9000
+
+const corsOptions = { origin: '*' };
 
 //middlewares
 app.use(express.json())
