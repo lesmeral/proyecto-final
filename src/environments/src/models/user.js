@@ -20,10 +20,6 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         minLength: [8, 'Password should be minimum of 8 characters']
-    },
-    isLogin: {
-        type:Boolean,
-        default: false
     }
 }, { timestamps: true })
 

@@ -13,9 +13,14 @@ const appointmentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    dateappointment: {
+    dateapp: {
         type: Date,
         required: true
+    },
+    hourapp:{
+        type:String,
+        required: true,
+        unique:true
     }
 }, { timestamps: true })
 

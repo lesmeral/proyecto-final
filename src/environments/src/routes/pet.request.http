@@ -21,7 +21,7 @@ Content-Type: application/json
     "password":"admin123"
 }
 
-//GET USERS
+//GET PETS BY USER
 ###
 GET http://localhost:3000/pet/Hiro/FreddyGM
 Content-Type: application/json
