@@ -13,6 +13,7 @@ const port = process.env.PORT || 9000
 const corsOptions = { origin: '*' };
 
 //middlewares
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use('/user',userRoutes)
 app.use('/doctor',doctorRoutes)
